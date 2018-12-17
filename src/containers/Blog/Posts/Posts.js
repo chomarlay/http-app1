@@ -28,20 +28,24 @@ class Posts extends Component {
     }
 
     postSelectedHandler (id){
-        this.setState({selectedPostId:id})
-    }
+        // programatically load the page instead of Link
+        // this.props.history.push({pathname: '/' + id});
+        // this.props.history.push('/' + id);
+       }
 render() {
     let posts = <p style= {{textAlign:'center'}}>Something went wrong!!</p>
     if (!this.state.error) {
         posts = this.state.posts.map(
             post => {
-                return (<Link to={'/'+post.id} key={post.id}>
+                return (
+                <Link to={'/'+post.id} key={post.id}>
                 <Post 
-                 
                 title={post.title} 
                 author={post.author}
-                clicked={() => this.postSelectedHandler(post.id)} />
-                </Link>)
+                // clicked={() => this.postSelectedHandler(post.id)} 
+                />
+                </Link>
+                )
                 ;
             });
     }
