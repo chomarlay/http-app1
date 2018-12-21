@@ -17,8 +17,18 @@ class NewPost extends Component {
             author: this.state.author,
         };
         axios.post("/posts/", data)
-        .then(response => {console.log(response.data)});
-        this.setState({submitted:true});
+        .then(response => 
+            {console.log(response.data);
+                // alternative to Redirect can use replace
+                // Note push will also work but when the back button is clicked
+                // it will display the new post page instead of the posts.
+            // this.props.history.push("/posts");
+            // this.props.history.replace("/posts");
+            this.setState({submitted:true});
+        
+        });
+        
+ 
     };
     render () {
         var redirect = null;
