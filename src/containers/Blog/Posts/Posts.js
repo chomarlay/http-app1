@@ -35,6 +35,7 @@ class Posts extends Component {
         this.props.history.push('/posts/' + id);
         console.log(this.props.match.url);
        }
+       
 render() {
     let posts = <p style= {{textAlign:'center'}}>Something went wrong!!</p>
     if (!this.state.error) {
