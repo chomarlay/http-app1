@@ -33,9 +33,8 @@ class Posts extends Component {
         // programatically load the page instead of Link
         // this.props.history.push({pathname: '/posts/' + id});
         this.props.history.push('/posts/' + id);
-        console.log(this.props.match.url);
        }
-       
+
 render() {
     let posts = <p style= {{textAlign:'center'}}>Something went wrong!!</p>
     if (!this.state.error) {
