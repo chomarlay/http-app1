@@ -33,6 +33,7 @@ class Blog extends Component {
                     {this.state.auth ? <Route path="/new-post" component={NewPost}/>:null} 
                     
                     <Route path="/posts" component={Posts}/>
+                    {/* <Route render={()=><h1>Not found</h1>}/> */}
                     <Redirect from="/" to="/posts" />
 
                 </Switch>
